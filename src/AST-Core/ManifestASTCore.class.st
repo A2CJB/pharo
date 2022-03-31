@@ -1,6 +1,5 @@
 "
 Manifest for AST-Core package
-stuff
 "
 Class {
 	#name : #ManifestASTCore,
