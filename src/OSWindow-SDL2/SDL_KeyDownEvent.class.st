@@ -28,7 +28,16 @@ SDL_KeyDownEvent >> isUserInterrupt [
 
 	^ ((self keysym mod bitAnd: 16r200) = 0) "ignore all if AltGr is pressed" 
 		and: [(self keysym mod anyMask: 1344) 
-			and: [ self keysym scancode = 55 ] ]
+			and: [ self keysym sym = $. asInteger ] ]
+	
+]
+
+{ #category : #testing }
+SDL_KeyDownEvent >> isUserInterruptKillAll [
+
+	^ ((self keysym mod bitAnd: 16r200) = 0) "ignore all if AltGr is pressed" 
+		and: [(self keysym mod anyMask: 1344) 
+			and: [ self keysym sym = $, asInteger ] ]
 	
 ]
 
